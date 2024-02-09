@@ -72,4 +72,21 @@ contract Portfolio{
     function allEducation() view public returns(Education[3] memory){
         return education;
     }
+
+    function changeDescription(string calldata _desc) external{
+        description=_desc;
+    }
+    function changeREsume(string calldata _resume) external{
+        resume=_resume;
+    }
+    function changeImage(string calldata _image) external{
+        profiledp=_image;
+    }
+
+    function donate() public payable {
+        payable(manager).transfer(msg.value);
+    }
+    
 }
+
+// deployed at 0x051E55a8d1F36730e69458318010720096a36657 through remix ide
